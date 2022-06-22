@@ -1,0 +1,103 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{%block title%}LEX{% endblock %}</title>
+
+
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-xl navbar-light" style=" background-color: #4E5166;">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand"> <i class="bi bi-book-half"></i> LEX</a>
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nbcollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="nbcollapse">
+
+                <ul class="navbar-nav">
+
+                
+                 
+                    <li><a href="/404" class="nav-item nav-link active">ÁREAS DE PRACTICA</a></li>
+
+<li><a href="/404" class="nav-item nav-link active"> EQUIPO</a></li>
+
+<li><a href="/404" class="nav-item nav-link active"> CONTACTO</a></li>
+
+                    
+
+                </ul>
+
+                <form class="d-flex col-sm-6">
+                    <div class="input-group">
+                        <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
+                        <input type="text" class="form-control" placeholder="Buscar...">
+                    </div>
+                </form>
+
+                <ul class="navbar-nav">
+                    {%if user.is_authenticated%}
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"> <i class="bi-person-circle"></i> {{request.user.username}}
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="/list" class="nav-item nav-link active"><i class="bi bi-file-earmark"></i> Solicitudes</a></li>
+                                    <li><a href="/logout" class="nav-item nav-link active"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+                        </ul>
+                    </li>
+
+                    {%else%}
+                    <li><a href="/login" class="nav-item nav-link active"><i class="bi-person-circle"></i> Login</a></li>
+                    {%endif%}
+                    <li><a href="/aboutus" class="nav-item nav-link active"><i class="bi bi-book"></i> Sobre nosotros</a></li>
+                </ul>
+                </div>
+
+            </div>
+    </nav>
+</header>
+
+<body style=" background-color: #7C90A0;">
+    {%block content%}
+    {%endblock%}
+  
+    <footer class="py-1 {%block footerPlace%}{%endblock%}" style=" background-color: #4E5166">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 my-md-3 d-flex justify-content-center ">
+                    <p class="mb-1"> <a class="plainlink" href="/">LEX&trade;</a> es parte the
+                        <a class="plainlink" href="/404">Honk&reg;</a>
+                    </p>
+
+                </div>
+
+                <div class="col-12 col-md-3 offset-md-6  d-flex justify-content-center">
+                    <ul>
+                        <li><a class="plainlink" href="/">Volver al inicio</a></li>
+                        <li><a class="plainlink" href="/termsservices">Terminos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+</body>
+
+</html>

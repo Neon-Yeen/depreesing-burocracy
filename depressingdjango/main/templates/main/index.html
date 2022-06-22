@@ -1,0 +1,122 @@
+{%extends "main/base.html"%}
+{% load static %}
+{%block content%}
+    <main>
+        <div class="container-fluid">
+            <div class="row py-3">
+                <div class="col">
+                    <!-- Carousel -->
+                    <div id="carouselmain" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
+                        <!-- index -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        </div>
+
+                        <!-- contenido-->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container-fluid">
+                                    <div class="d-flex justify-content-center ">
+                                        <img src='{%static "assets/img/carousel/lawyer1.png"%}' alt="Los Angeles" class="carouselfp d-block w-100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="d-flex justify-content-center ">
+                                        <img src='{%static "assets/img/carousel/lawyer2.jpg"%}' alt="Los Angeles" class="carouselfp d-block w-100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="d-flex justify-content-center ">
+                                        <img src='{%static "assets/img/carousel/lawyer3.jpg"%}' alt="Los Angeles" class="carouselfp d-block w-100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- controles -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselmain" data-bs-slide="prev">
+                         <span class="carousel-control-prev-icon"></span>
+                    </button>
+
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselmain" data-bs-slide="next">
+                          <span class="carousel-control-next-icon d-flex justify-content-end"></span>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Clientes -->
+        <div class="container">
+            <div class="my-5 ">
+                <div class="container" id="plants">
+                    <div class="row">
+                        <div class="col" >
+                            <H1>A un solo click <i class="bi bi-cursor"></i> de ayudarte</H1>
+                            <p><h3><a href="/register">Registrate</a> envianos los documentos legales y un tecnico juridico te atendera en menos de 10 minutos</h3></p>
+
+<p><h3>
+    <strong>simple, facil y confiable</strong>
+</h3></p>
+
+
+                        </div>
+                        </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+        <!-- Areas de practica -->
+        <div class="container-fluid" style=" background-color: #747274;">
+            <div class="my-5 ">
+                <div class="container" id="plants">
+                    <div class="row">
+                        <div class="col-6 d-flex align-items-center" >
+                            <H1>ÁREAS DE
+PRÁCTICA</H1>
+
+                        </div>
+
+  <div class="col-6" style=" background-color: #7C90A0;">
+      <div class="row">
+          <div class="col-6">
+              <p><h4>DERECHO PENAL</h4></p>
+              <p>Servicio de defensa en todas las etapas del proceso penal tanto como defensor o como querellante.</p>
+          </div>
+
+          <div class="col-6">
+              <p><h4>DERECHO LABORAL</h4></p>
+              <p>Defensa de tus derechos laborales ante los tribunales de justicia, en caso de que estos sean vulnerados, por un despido u otro caso en que no se respeten tus derechos.</p>
+          </div>
+
+          <div class="col-6">
+              <p><h4>DERECHO DE FAMILIA</h4></p>
+              <p>Defensa de tus derechos ante los Tribunales de Familia, como la regulación de alimentos, relación directa y regular, divorcios, entre otros.</p>
+          </div>
+
+          <div class="col-6">
+              <p><h4>DERECHO CIVIL</h4></p>
+              <p>Asesoría en materia civil, como posesiones efectivas, indemnización de perjuicios, arriendo, entre otras materias. </p>
+          </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+    </main>
+{%endblock%}
+

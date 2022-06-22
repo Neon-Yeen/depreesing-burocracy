@@ -1,0 +1,85 @@
+{% extends "main/base.html"%}
+{% load crispy_forms_tags%}
+{%block content%}
+{% if request.user.username == "TecnicoJuridico"%}
+<main class="fondo-login">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="row py-5">
+                <div class="col rounded-3" style=" background-color: #ebf2fa;">
+                    <div class=" d-flex justify-content-center my-3 ">
+
+                        <form method="POST" class="form-group">
+                            
+                            {%csrf_token%}
+                        {{form2|crispy}}
+                       
+<div class="input-group mb-3 py-4">
+  <label class="input-group-text" for="inputGroupFile01">Subir archivos</label>
+  <input type="file" class="form-control" id="inputGroupFile01">
+</div>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                        
+                        </form>
+                    </div>
+               </div>
+            </div>
+         </div>
+    </div>
+
+{% elif request.user.username == "Abogado"%}
+   <main class="fondo-login">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="row py-5">
+                <div class="col rounded-3" style=" background-color: #ebf2fa;">
+                    <div class=" d-flex justify-content-center my-3 ">
+
+                        <form method="POST" class="form-group">
+                            {%csrf_token%}
+                        {{form3|crispy}}
+                       
+<div class="input-group mb-3 py-4">
+  <label class="input-group-text" for="inputGroupFile01">Subir archivos</label>
+  <input type="file" class="form-control" id="inputGroupFile01">
+</div>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                        
+                        </form>
+                    </div>
+               </div>
+            </div>
+         </div>
+    </div>
+
+{% else %}
+    <main class="fondo-login">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="row py-5">
+                <div class="col rounded-3" style=" background-color: #ebf2fa;">
+                    <div class=" d-flex justify-content-center my-3 ">
+
+                        <form method="POST" class="form-group">
+                            {%csrf_token%}
+                        
+                        {{form1|crispy}}
+                       
+<div class="input-group mb-3 py-4">
+  <label class="input-group-text" for="inputGroupFile01">Subir archivos</label>
+  <input type="file" class="form-control" id="inputGroupFile01">
+</div>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                        
+                        </form>
+                    </div>
+               </div>
+            </div>
+         </div>
+    </div>
+
+{% endif %}
+
+</main>
+{%endblock%}
+{%block footerPlace%}fixed-bottom{%endblock%}
